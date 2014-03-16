@@ -1,0 +1,129 @@
+
+<?php echo $this->getContent(); ?>
+
+<?php echo $this->tag->form("item/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo $this->tag->linkTo(array("item", "Back")) ?></td>
+        <td align="right"><?php echo $this->tag->submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit item</h1>
+</div>
+
+<table>
+    <tr>
+        <td align="right">
+            <label for="name">Name</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("name", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="price">Price</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("price", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="type">Type</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("type", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="status">Status</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("status", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="description">Description</label>
+        </td>
+        <td align="left">
+                <?php echo $this->tag->textField(array("description", "type" => "date")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="img">Img</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("img", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="public_range">Public Of Range</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("public_range", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="created_by">Created Of By</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("created_by", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="approved_by">Approved Of By</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("approved_by", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="approved_at">Approved</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("approved_at", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="created_at">Created</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("created_at", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="updated_at">Updated</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("updated_at", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="deleted_at">Deleted</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("deleted_at", "size" => 30)) ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td><?php echo $this->tag->hiddenField(["id", "value" => $id]) ?></td>
+        <td><?php echo $this->tag->submitButton("Search") ?></td>
+    </tr>
+</table>
+
+</form>

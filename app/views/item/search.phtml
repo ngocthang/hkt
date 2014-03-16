@@ -1,0 +1,72 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo $this->tag->linkTo(array("item/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo $this->tag->linkTo(array("item/new", "Create ")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Description</th>
+            <th>Img</th>
+            <th>Public Of Range</th>
+            <th>Created Of By</th>
+            <th>Approved Of By</th>
+            <th>Approved</th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>Deleted</th>
+         </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($page->items as $item) { ?>
+        <tr>
+            <td><?php echo $item->id ?></td>
+            <td><?php echo $item->name ?></td>
+            <td><?php echo $item->price ?></td>
+            <td><?php echo $item->type ?></td>
+            <td><?php echo $item->status ?></td>
+            <td><?php echo $item->description ?></td>
+            <td><?php echo $item->img ?></td>
+            <td><?php echo $item->public_range ?></td>
+            <td><?php echo $item->created_by ?></td>
+            <td><?php echo $item->approved_by ?></td>
+            <td><?php echo $item->approved_at ?></td>
+            <td><?php echo $item->created_at ?></td>
+            <td><?php echo $item->updated_at ?></td>
+            <td><?php echo $item->deleted_at ?></td>
+            <td><?php echo $this->tag->linkTo(array("item/edit/" . $item->id, "Edit")); ?></td>
+            <td><?php echo $this->tag->linkTo(array("item/delete/" . $item->id, "Delete")); ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="2" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo $this->tag->linkTo("item/search", "First") ?></td>
+                        <td><?php echo $this->tag->linkTo("item/search?page=" . $page->before, "Previous") ?></td>
+                        <td><?php echo $this->tag->linkTo("item/search?page=" . $page->next, "Next") ?></td>
+                        <td><?php echo $this->tag->linkTo("item/search?page=" . $page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>
